@@ -1,0 +1,13 @@
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\netcoreapp3.1\hadOOP.exe
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\netcoreapp3.1\hadOOP.deps.json
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\netcoreapp3.1\hadOOP.runtimeconfig.json
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\netcoreapp3.1\hadOOP.runtimeconfig.dev.json
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\netcoreapp3.1\hadOOP.dll
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\netcoreapp3.1\hadOOP.pdb
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\netcoreapp3.1\hadOOP.csprojAssemblyReference.cache
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\netcoreapp3.1\hadOOP.AssemblyInfoInputs.cache
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\netcoreapp3.1\hadOOP.AssemblyInfo.cs
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\netcoreapp3.1\hadOOP.csproj.CoreCompileInputs.cache
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\netcoreapp3.1\hadOOP.dll
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\netcoreapp3.1\hadOOP.pdb
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\netcoreapp3.1\hadOOP.genruntimeconfig.cache

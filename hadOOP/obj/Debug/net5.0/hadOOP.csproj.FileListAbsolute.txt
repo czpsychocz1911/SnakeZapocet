@@ -1,0 +1,16 @@
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\net5.0\hadOOP.exe
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\net5.0\hadOOP.deps.json
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\net5.0\hadOOP.runtimeconfig.json
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\net5.0\hadOOP.runtimeconfig.dev.json
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\net5.0\hadOOP.dll
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\net5.0\ref\hadOOP.dll
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\bin\Debug\net5.0\hadOOP.pdb
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\net5.0\hadOOP.csprojAssemblyReference.cache
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\net5.0\hadOOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\net5.0\hadOOP.AssemblyInfoInputs.cache
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\net5.0\hadOOP.AssemblyInfo.cs
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\net5.0\hadOOP.csproj.CoreCompileInputs.cache
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\net5.0\hadOOP.dll
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\net5.0\ref\hadOOP.dll
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\net5.0\hadOOP.pdb
+C:\Users\nasrat\source\repos\hadOOP\hadOOP\obj\Debug\net5.0\hadOOP.genruntimeconfig.cache
