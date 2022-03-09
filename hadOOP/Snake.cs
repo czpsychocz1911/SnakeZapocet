@@ -15,6 +15,7 @@ namespace hadOOP
 
         public int Y => _bodyPoints[0].Y;
 
+
         public void DrawSelf()
         {
             foreach (var (X, Y) in _bodyPoints)

@@ -10,9 +10,8 @@ namespace hadOOP
     {
         readonly List<IMapObject> _mapObjects = new List<IMapObject>();
         readonly IMovableMapObject _snake = new Snake();
-        readonly Food _food = new Food();
+        public Food food = new Food();
         private bool drawn = false;
-        private bool foodGen = false;
 
         public Map()
         {
@@ -30,6 +29,7 @@ namespace hadOOP
 
         public void Draw()
         {
+            FoodCollison();
             if(drawn == false)
             {
                 foreach (var mo in _mapObjects)
@@ -38,10 +38,10 @@ namespace hadOOP
                 }
                 drawn = true;
             }
-            if(foodGen == false)
+            if(food.FoodGen == false)
             {
-                _food.DrawSelf();
-                foodGen = true;
+                food.DrawSelf();
+                food.FoodGen = true;
             }
             _snake.DrawSelf();
         }
@@ -52,6 +52,14 @@ namespace hadOOP
             if (_mapObjects.Any(a => a.IsCollision(_snake.X, _snake.Y)))
             {
                 throw new CollisionException();
+            }
+        }
+
+        public void FoodCollison()
+        {
+            if(_snake.X == food.X && _snake.Y == food.Y)
+            {
+                food.FoodGen = false;
             }
         }
     }
