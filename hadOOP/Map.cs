@@ -27,7 +27,6 @@ namespace hadOOP
 
         public void Draw()
         {
-            Console.Clear();
             foreach(var mo in _mapObjects)
             {
                 mo.DrawSelf();

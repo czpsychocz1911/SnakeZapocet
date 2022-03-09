@@ -30,15 +30,23 @@ namespace hadOOP
             switch (direction)
             {
                 case Direction.Down:
+                    Console.SetCursorPosition(_bodyPoints[0].X, _bodyPoints[0].Y);
+                    Console.Write(' ');
                     _bodyPoints[0] = _bodyPoints[0] with { Y = _bodyPoints[0].Y + 1 };
                     break;
                 case Direction.Up:
+                    Console.SetCursorPosition(_bodyPoints[0].X, _bodyPoints[0].Y);
+                    Console.Write(' ');
                     _bodyPoints[0] = _bodyPoints[0] with { Y = _bodyPoints[0].Y - 1 };
                     break;
                 case Direction.Left:
+                    Console.SetCursorPosition(_bodyPoints[0].X, _bodyPoints[0].Y);
+                    Console.Write(' ');
                     _bodyPoints[0] = _bodyPoints[0] with { X = _bodyPoints[0].X - 1 };
                     break;
                 case Direction.Right:
+                    Console.SetCursorPosition(_bodyPoints[0].X, _bodyPoints[0].Y);
+                    Console.Write(' ');
                     _bodyPoints[0] = _bodyPoints[0] with { X = _bodyPoints[0].X + 1 };
                     break;
                 default:
