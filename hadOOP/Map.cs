@@ -10,7 +10,9 @@ namespace hadOOP
     {
         readonly List<IMapObject> _mapObjects = new List<IMapObject>();
         readonly IMovableMapObject _snake = new Snake();
+        readonly Food _food = new Food();
         private bool drawn = false;
+        private bool foodGen = false;
 
         public Map()
         {
@@ -35,6 +37,11 @@ namespace hadOOP
                     mo.DrawSelf();
                 }
                 drawn = true;
+            }
+            if(foodGen == false)
+            {
+                _food.DrawSelf();
+                foodGen = true;
             }
             _snake.DrawSelf();
         }
