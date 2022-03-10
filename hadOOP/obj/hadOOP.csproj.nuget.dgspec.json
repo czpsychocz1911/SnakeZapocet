@@ -1,20 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nasrat\\source\\repos\\hadOOP\\hadOOP\\hadOOP.csproj": {}
+    "C:\\projects\\SnakeZapocet\\hadOOP\\hadOOP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nasrat\\source\\repos\\hadOOP\\hadOOP\\hadOOP.csproj": {
+    "C:\\projects\\SnakeZapocet\\hadOOP\\hadOOP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nasrat\\source\\repos\\hadOOP\\hadOOP\\hadOOP.csproj",
+        "projectUniqueName": "C:\\projects\\SnakeZapocet\\hadOOP\\hadOOP.csproj",
         "projectName": "hadOOP",
-        "projectPath": "C:\\Users\\nasrat\\source\\repos\\hadOOP\\hadOOP\\hadOOP.csproj",
-        "packagesPath": "C:\\Users\\nasrat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nasrat\\source\\repos\\hadOOP\\hadOOP\\obj\\",
+        "projectPath": "C:\\projects\\SnakeZapocet\\hadOOP\\hadOOP.csproj",
+        "packagesPath": "C:\\Users\\necha\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\SnakeZapocet\\hadOOP\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\nasrat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\necha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

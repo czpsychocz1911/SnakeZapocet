@@ -8,25 +8,26 @@ namespace hadOOP
 {
     class Food : IMapObject
     {
-        public int X { get; set; }
+        public int X { get; }
 
-        public int Y { get; set; }
+        public int Y { get; }
 
-        public bool FoodGen { get; set; }
-        private Random Random = new Random();
+        public Food()
+        {
+            var rnd = new Random(DateTime.Now.Millisecond);
+            X = rnd.Next(4, Console.WindowWidth - 4);
+            Y = rnd.Next(4, Console.WindowHeight - 4);
+        }
+
         public void DrawSelf()
         {
-            int xRnd = Random.Next(1, Console.WindowWidth - 1);
-            int yRnd = Random.Next(2, Console.WindowHeight - 1);
-            Console.SetCursorPosition(xRnd, yRnd);
+            Console.SetCursorPosition(X, Y);
             Console.Write('F');
-            X = xRnd;
-            Y = yRnd;
         }
 
         public bool IsCollision(int x, int y)
         {
-            throw new NotImplementedException();
+            return X == x && Y == y;
         }
     }
 }
