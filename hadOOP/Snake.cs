@@ -9,12 +9,13 @@ namespace hadOOP
     {
         record Point(int X, int Y);
 
-        List<Point> _bodyPoints = new List<Point>() {new Point(Console.WindowWidth / 2, Console.WindowHeight / 2) };
+        List<Point> _bodyPoints = new List<Point>() { new Point(Console.WindowWidth / 2, Console.WindowHeight / 2) };
 
         public int X => _bodyPoints[0].X;
 
         public int Y => _bodyPoints[0].Y;
 
+        public int Score { get; set; }
 
         public void DrawSelf()
         {

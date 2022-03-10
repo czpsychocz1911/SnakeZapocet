@@ -17,7 +17,7 @@ namespace hadOOP
         public void DrawSelf()
         {
             int xRnd = Random.Next(1, Console.WindowWidth - 1);
-            int yRnd = Random.Next(1, Console.WindowHeight - 1);
+            int yRnd = Random.Next(2, Console.WindowHeight - 1);
             Console.SetCursorPosition(xRnd, yRnd);
             Console.Write('F');
             X = xRnd;

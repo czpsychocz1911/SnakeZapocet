@@ -11,13 +11,14 @@ namespace hadOOP
         readonly List<IMapObject> _mapObjects = new List<IMapObject>();
         readonly IMovableMapObject _snake = new Snake();
         public Food food = new Food();
+        private Score score = new Score();
         private bool drawn = false;
 
         public Map()
         {
             for(int i = 0; i < Console.WindowWidth; i++)
             {
-                _mapObjects.Add(new Wall(i, 0));
+                _mapObjects.Add(new Wall(i, 1));
                 _mapObjects.Add(new Wall(i, Console.WindowHeight-1));
             }
             for(int i = 1; i < Console.WindowHeight-1; i++)
@@ -25,6 +26,8 @@ namespace hadOOP
                 _mapObjects.Add(new Wall(0, i));
                 _mapObjects.Add(new Wall(Console.WindowWidth-1, i));
             }
+            score.Count = 0;
+            score.DrawSelf();
         }
 
         public void Draw()
@@ -60,6 +63,8 @@ namespace hadOOP
             if(_snake.X == food.X && _snake.Y == food.Y)
             {
                 food.FoodGen = false;
+                score.Count++;
+                score.DrawSelf();
             }
         }
     }
