@@ -15,8 +15,6 @@ namespace hadOOP
 
         public int Y => _bodyPoints[0].Y;
 
-        public int Score { get; set; }
-
         public void DrawSelf()
         {
             foreach (var (X, Y) in _bodyPoints)
@@ -66,6 +64,11 @@ namespace hadOOP
             {
                 throw new CollisionException();
             }
+        }
+
+        public void grow()
+        {
+
         }
 
         public bool IsCollision(int x, int y)
