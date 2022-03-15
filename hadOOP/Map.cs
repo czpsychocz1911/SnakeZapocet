@@ -10,30 +10,30 @@ namespace hadOOP
     {
         readonly List<IMapObject> _mapObjects = new List<IMapObject>();
         readonly IMovableMapObject _snake = new Snake();
-        public Food food = new Food();
         private Score score = new Score();
         private bool drawn = false;
 
         public Map()
         {
-            for(int i = 0; i < Console.WindowWidth; i++)
+            for (int i = 0; i < Console.WindowWidth; i++)
             {
                 _mapObjects.Add(new Wall(i, 1));
-                _mapObjects.Add(new Wall(i, Console.WindowHeight-1));
+                _mapObjects.Add(new Wall(i, Console.WindowHeight - 1));
             }
-            for(int i = 1; i < Console.WindowHeight-1; i++)
+            for (int i = 1; i < Console.WindowHeight - 1; i++)
             {
                 _mapObjects.Add(new Wall(0, i));
-                _mapObjects.Add(new Wall(Console.WindowWidth-1, i));
+                _mapObjects.Add(new Wall(Console.WindowWidth - 1, i));
             }
             score.Count = 0;
             score.DrawSelf();
+            _mapObjects.Add(new Food());
         }
 
         public void Draw()
         {
             FoodCollison();
-            if(drawn == false)
+            if (drawn == false)
             {
                 foreach (var mo in _mapObjects)
                 {
@@ -41,30 +41,31 @@ namespace hadOOP
                 }
                 drawn = true;
             }
-            if(food.FoodGen == false)
-            {
-                food.DrawSelf();
-                food.FoodGen = true;
-            }
             _snake.DrawSelf();
         }
 
         public void MoveSnake(Direction direction)
         {
             _snake.Move(direction);
+            FoodCollison();
             if (_mapObjects.Any(a => a.IsCollision(_snake.X, _snake.Y)))
             {
                 throw new CollisionException();
             }
         }
 
-        public void FoodCollison()
+        protected void FoodCollison()
         {
-            if(_snake.X == food.X && _snake.Y == food.Y)
+            var food = _mapObjects.Where(a => a is Food).FirstOrDefault(a => a.IsCollision(_snake.X, _snake.Y));
+            if (food != null)
             {
-                food.FoodGen = false;
                 score.Count++;
                 score.DrawSelf();
+                _mapObjects.Remove(food);
+                food = new Food();
+                _mapObjects.Add(food);
+                food.DrawSelf();
+                _snake.IsCollision(_snake.X, _snake.Y);
             }
         }
     }

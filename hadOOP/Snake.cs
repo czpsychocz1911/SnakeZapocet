@@ -27,25 +27,26 @@ namespace hadOOP
         public void Move(Direction direction)
         {
             var headOriginalPosition = _bodyPoints[0];
+            var tailPosition = _bodyPoints.LastOrDefault();
             switch (direction)
             {
                 case Direction.Down:
-                    Console.SetCursorPosition(_bodyPoints[0].X, _bodyPoints[0].Y);
+                    Console.SetCursorPosition(tailPosition.X,tailPosition.Y);
                     Console.Write(' ');
                     _bodyPoints[0] = _bodyPoints[0] with { Y = _bodyPoints[0].Y + 1 };
                     break;
                 case Direction.Up:
-                    Console.SetCursorPosition(_bodyPoints[0].X, _bodyPoints[0].Y);
+                    Console.SetCursorPosition(tailPosition.X, tailPosition.Y);
                     Console.Write(' ');
                     _bodyPoints[0] = _bodyPoints[0] with { Y = _bodyPoints[0].Y - 1 };
                     break;
                 case Direction.Left:
-                    Console.SetCursorPosition(_bodyPoints[0].X, _bodyPoints[0].Y);
+                    Console.SetCursorPosition(tailPosition.X, tailPosition.Y);
                     Console.Write(' ');
                     _bodyPoints[0] = _bodyPoints[0] with { X = _bodyPoints[0].X - 1 };
                     break;
                 case Direction.Right:
-                    Console.SetCursorPosition(_bodyPoints[0].X, _bodyPoints[0].Y);
+                    Console.SetCursorPosition(tailPosition.X, tailPosition.Y);
                     Console.Write(' ');
                     _bodyPoints[0] = _bodyPoints[0] with { X = _bodyPoints[0].X + 1 };
                     break;
@@ -71,9 +72,20 @@ namespace hadOOP
 
         }
 
+        public void grow()
+        {
+            Point point = new Point(X, Y);
+            _bodyPoints.Add(point);
+        }
+
         public bool IsCollision(int x, int y)
         {
-            throw new NotImplementedException();
+            if(_bodyPoints[0].X == x && _bodyPoints[0].Y == y)
+            {
+                grow();
+                return true;
+            }
+            return false;
         }
     }
 }
