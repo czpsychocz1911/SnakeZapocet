@@ -69,11 +69,6 @@ namespace hadOOP
 
         public void grow()
         {
-
-        }
-
-        public void grow()
-        {
             Point point = new Point(X, Y);
             _bodyPoints.Add(point);
         }
