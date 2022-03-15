@@ -65,6 +65,7 @@ namespace hadOOP
                 food = new Food();
                 _mapObjects.Add(food);
                 food.DrawSelf();
+                _snake.IsCollision(_snake.X, _snake.Y);
             }
         }
     }
