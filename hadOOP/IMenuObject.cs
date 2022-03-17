@@ -10,6 +10,5 @@ namespace hadOOP
     {
         void DrawSelf();
 
-
     }
 }

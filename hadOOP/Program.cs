@@ -1,10 +1,18 @@
-﻿using System;
-
+﻿using SimpleCMenu.Menu;
+using System;
 namespace hadOOP
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            ConsoleMenu consoleMenu = new ConsoleMenu();
+            consoleMenu.addMenuItem(0, "Start", Start);
+            consoleMenu.showMenu();
+            
+        }
+
+        public static void Start()
         {
             var map = new Map();
             map.Draw();
