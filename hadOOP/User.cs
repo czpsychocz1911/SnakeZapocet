@@ -28,6 +28,11 @@ namespace hadOOP
             PwdHash = pwdHash;
             HighScore = highScore;
         }
+
+        public User()
+        {
+
+        }
         private void SetHighScore(int score)
         {
             if(score > this.HighScore)
@@ -36,12 +41,28 @@ namespace hadOOP
             }
         }
 
+        public bool LoginAsUser(string userName,string userPass)
+        {
+            LoadUserList();
+            foreach(User u in users)
+            {
+                if(u.UserName == userName && u.PwdHash == userPass)
+                {
+                    Console.WriteLine("Lognul jsi se uspešně!");
+                    Console.ReadKey();
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void CreateUser(User user)
         {
             LoadUserList();
             if(UserNameTaken(user.UserName))
             {
                 Console.WriteLine("Dej si jíne jmeno");
+                Console.ReadKey();
             }
             else
             {

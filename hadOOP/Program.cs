@@ -10,11 +10,46 @@ namespace hadOOP
     {
         static void Main(string[] args)
         {
-            ConsoleMenu consoleMenu = new ConsoleMenu();
-            consoleMenu.addMenuItem(0, "Start", Start);
-            consoleMenu.addMenuItem(1, "Register", Register);
-            consoleMenu.showMenu();
-            
+            ConsoleMenu loginMenu = new ConsoleMenu();
+
+            ConsoleMenu mainMenu = new ConsoleMenu();
+
+            loginMenu.SubTitle = "-----Login-----";
+            loginMenu.SubTitleColor = ConsoleColor.Green;
+
+            mainMenu.SubTitle = "-----Menu-----";
+            mainMenu.SubTitleColor = ConsoleColor.Blue;
+
+            loginMenu.addMenuItem(0, "Login", () => Login(mainMenu));
+            loginMenu.addMenuItem(1, "Register", Register);
+            mainMenu.ParentMenu = loginMenu;
+            mainMenu.addMenuItem(0, "Start",Start);
+            mainMenu.addMenuItem(1, "High scores", HighScoreList);
+            loginMenu.showMenu();
+        }
+
+        public static void HighScoreList()
+        {
+            var user = new User();
+            user.LoadUserList();
+            foreach(User u in user.users)
+            {
+                Console.WriteLine(u.UserName + "----" + u.HighScore);
+            }
+            Console.ReadKey();
+        }
+
+        public static void Login(ConsoleMenu consoleMenu)
+        {
+            Console.WriteLine("Zadej login: ");
+            var userName = Console.ReadLine();
+            Console.WriteLine("Zadej heslo: ");
+            var userPass = Console.ReadLine();
+            User user = new User();
+            if(user.LoginAsUser(userName,userPass) == true)
+            {
+                consoleMenu.showMenu();
+            }
         }
 
         public static void Register()
