@@ -10,24 +10,23 @@ namespace hadOOP
     {
         static void Main(string[] args)
         {
+            User user = new User();
             ConsoleMenu loginMenu = new ConsoleMenu();
-
+            
             ConsoleMenu mainMenu = new ConsoleMenu();
 
             loginMenu.SubTitle = "-----Login-----";
             loginMenu.SubTitleColor = ConsoleColor.Green;
 
-            mainMenu.SubTitle = "-----Menu-----";
             mainMenu.SubTitleColor = ConsoleColor.Blue;
 
             loginMenu.addMenuItem(0, "Login", () => Login(mainMenu));
             loginMenu.addMenuItem(1, "Register", Register);
             mainMenu.ParentMenu = loginMenu;
-            mainMenu.addMenuItem(0, "Start",Start);
+            mainMenu.addMenuItem(0, "Start", () => Start(Login(null)));
             mainMenu.addMenuItem(1, "High scores", HighScoreList);
             loginMenu.showMenu();
         }
-
         public static void HighScoreList()
         {
             var user = new User();
@@ -39,17 +38,23 @@ namespace hadOOP
             Console.ReadKey();
         }
 
-        public static void Login(ConsoleMenu consoleMenu)
+        public static User Login(ConsoleMenu consoleMenu)
         {
-            Console.WriteLine("Zadej login: ");
-            var userName = Console.ReadLine();
-            Console.WriteLine("Zadej heslo: ");
-            var userPass = Console.ReadLine();
-            User user = new User();
-            if(user.LoginAsUser(userName,userPass) == true)
+            if(consoleMenu != null)
             {
-                consoleMenu.showMenu();
+                Console.WriteLine("Zadej login: ");
+                var userName = Console.ReadLine();
+                Console.WriteLine("Zadej heslo: ");
+                var userPass = Console.ReadLine();
+                var user = new User(userName, userPass);
+                if (user.LoginAsUser(userName, userPass) == true)
+                {
+                    consoleMenu.SubTitle = "-----Menu-----\n" + "You are logged in as: " + userName;
+                    consoleMenu.showMenu();
+                    return user;
+                }
             }
+            return null;
         }
 
         public static void Register()
@@ -62,7 +67,7 @@ namespace hadOOP
             user.CreateUser(user);
         }
 
-        public static void Start()
+        public static void Start(User user)  //// Sem jsou potřeba ty data toho usera
         {
             var map = new Map();
             map.Draw();

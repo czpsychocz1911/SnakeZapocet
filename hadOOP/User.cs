@@ -11,7 +11,7 @@ using System.Globalization;
 
 namespace hadOOP
 {
-    class User
+    class User : IUser
     {
         public List<User> users = new List<User>();
 
@@ -27,6 +27,12 @@ namespace hadOOP
             UserName = userName;
             PwdHash = pwdHash;
             HighScore = highScore;
+        }
+
+        public User(string userName, string pwdHash)
+        {
+            UserName = userName;
+            PwdHash = pwdHash;
         }
 
         public User()
@@ -105,6 +111,11 @@ namespace hadOOP
                 }
             }
             return false;
+        }
+
+        public string returnUserName()
+        {
+            return this.UserName;
         }
     }
 }

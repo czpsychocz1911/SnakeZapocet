@@ -12,6 +12,7 @@ namespace hadOOP
         readonly IMovableMapObject _snake = new Snake();
         private Score score = new Score();
         private bool drawn = false;
+        private User user = new User();
 
         public Map()
         {
